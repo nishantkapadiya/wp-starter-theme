@@ -19,7 +19,7 @@ define( 'ZWT_THEME_PREFIX', 'zwt' );
  * @var array
  */
 register_nav_menus( array(
-	'primary' => 'Primary',
+	'main-menu' => 'Main Menu',
 ) );
 
 /**

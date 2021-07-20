@@ -8,15 +8,22 @@ if (!defined('ABSPATH') || !function_exists('add_filter')) {
 	exit;
 }
 get_header();
-echo '<div class="main-content">
+echo '<section class="inner-hero">';
+		$post_img = get_the_post_thumbnail();
+		echo '<div class="inner-hero-img img-to-bg">'.$post_img.'</div>';
+		echo '<div class="container inner-hero-content text-center py-30">
+			<h1 class="h1">'.get_the_title().'</h1>
+		</div>
+</section>
+<div class="main-content">
 	<section class="body-content py-30">
-	<div class="container">';
-		if ( have_posts() ) {
-			while ( have_posts() ) {
-				the_post();
-				the_content();
+		<div class="container">';
+			if ( have_posts() ) {
+				while ( have_posts() ) {
+					the_post();
+					the_content();
+				}
 			}
-		}
 	echo '</div>
 	</section>
 </div>';
