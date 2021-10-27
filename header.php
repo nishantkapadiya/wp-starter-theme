@@ -68,13 +68,13 @@ if ( !defined( 'ABSPATH' ) || !function_exists( 'add_filter' ) ) {
                         echo'</nav>
                     </div>';
                 }
-                    echo'<!-- hamburger -->
-                    <a href="javascript:;" class="hamburger">
-                        <span class="hamburger__wrap">
-                            <span class="hamburger__line"></span>
-                            <span class="hamburger__line"></span>
-                            <span class="hamburger__line"></span>
-                        </span>
-                    </a>
+                echo'<!-- hamburger -->
+                <a href="javascript:;" class="hamburger">
+                    <span class="hamburger__wrap">
+                        <span class="hamburger__line"></span>
+                        <span class="hamburger__line"></span>
+                        <span class="hamburger__line"></span>
+                    </span>
+                </a>
                 </div>
             </header>';

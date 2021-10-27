@@ -53,3 +53,11 @@ add_filter( 'acf/settings/load_json', 'acf_settings_load_json' );
 
 // Gutenberg disable
 // add_filter('use_block_editor_for_post', '__return_false', 10);
+
+/*-------------------------------------
+    Move Yoast to the Bottom
+---------------------------------------*/
+function yoasttobottom() {
+    return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
