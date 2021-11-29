@@ -33,18 +33,6 @@ if ( !defined( 'ABSPATH' ) || !function_exists( 'add_filter' ) ) {
 			<div class="mbnav d-md-none">
                 <div class="mbnav__backdrop"></div>
                 <div class="mbnav__state" data-clickable="true">
-                    <!-- menu header and hamburger -->
-                    <div class="mbnav__top">
-                        <div class="mbnav__logo">
-                            <span>Navigation</span>
-                        </div>
-                        <a href="javascript:;" class="hamburger close">
-                            <span class="hamburger__wrap">
-                                <span class="hamburger__line"></span>
-                                <span class="hamburger__line"></span>
-                            </span>
-                        </a>
-                    </div>
                     <!--  main responsive menu -->
                     <div class="mbnav__inner">';
                     if ( has_nav_menu( 'main-menu' ) ) {
@@ -70,11 +58,7 @@ if ( !defined( 'ABSPATH' ) || !function_exists( 'add_filter' ) ) {
                 }
                 echo'<!-- hamburger -->
                 <a href="javascript:;" class="hamburger">
-                    <span class="hamburger__wrap">
-                        <span class="hamburger__line"></span>
-                        <span class="hamburger__line"></span>
-                        <span class="hamburger__line"></span>
-                    </span>
-                </a>
+                        <span></span>
+                    </a>
                 </div>
             </header>';
