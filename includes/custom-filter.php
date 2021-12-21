@@ -12,11 +12,16 @@ if ( !defined( 'ABSPATH' ) ) {
 /**
  * Upload SVG file permission
  */
-function add_svg_uploads( $svg ) {
-    $svg['svg'] = 'image/svg+xml';
-    return $svg;
+//add SVG to allowed file uploads
+function add_file_types_to_uploads($file_types){
+
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg';
+    $file_types = array_merge($file_types, $new_filetypes );
+
+    return $file_types;
 }
-add_filter( 'upload_mimes', 'add_svg_uploads' );
+add_action('upload_mimes', 'add_file_types_to_uploads');
 
 /**
  * Filter: acf/settings/save_json
