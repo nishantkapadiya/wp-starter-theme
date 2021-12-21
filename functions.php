@@ -12,7 +12,7 @@ if ( !defined( 'ABSPATH' ) ) {
 /**
  * Define theme's prefix.
  */
-define( 'ZWT_THEME_PREFIX', 'zwt' );
+define( 'THEME_PREFIX', 'zwt' );
 
 /**
  * - Register Navigation Name
