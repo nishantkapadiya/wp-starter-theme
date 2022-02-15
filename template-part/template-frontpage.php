@@ -16,7 +16,7 @@ get_header();
             <div class="main-content">
                 <section class="body-content py-30">
                     <div class="container">
-                        <h2>About Webstandard of Zealousweb</h2>
+                        <h2>About Webstandard</h2>
                     </div>
                 </section>
             </div>
