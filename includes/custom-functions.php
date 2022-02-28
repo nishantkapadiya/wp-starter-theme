@@ -11,7 +11,22 @@ if ( !defined( 'ABSPATH' ) ) {
 
 /* ACF option */
 if( function_exists('acf_add_options_page') ) {
-	acf_add_options_sub_page('Theme Options');
+
+	acf_add_options_page(array(
+		'page_title' 	=> __( 'Theme Options', 'wpstarter' ),
+		'menu_title'	=> __( 'Theme Options', 'wpstarter' ),
+		'menu_slug' 	=> 'theme-options',
+	));
+	acf_add_options_sub_page(array(
+		'page_title' 	=> __( 'Theme Options', 'wpstarter' ),
+		'menu_title'	=> __( 'Theme Options', 'wpstarter' ),
+		'parent_slug'	=> 'theme-options',
+	));
+	acf_add_options_sub_page(array(
+		'page_title' 	=> __( '404', 'wpstarter' ),
+		'menu_title'	=> __( '404', 'wpstarter' ),
+		'parent_slug'	=> 'theme-options',
+	));
 }
 
 /* SVG icon function start */

@@ -60,3 +60,26 @@ echo '<style>
 	}
 	</style>';
 }
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ *
+ * @return void
+ */
+function custom_widgets_init() {
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Block', 'wpstarter' ),
+			'id'            => 'footer-block',
+			'description'   => esc_html__( 'Add widgets here to appear menu in your footer.', 'wpstarter' ),
+			'before_widget' => '<div id="%1$s" class="mb-sm-30 mb-0">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="sidebar-title">',
+			'after_title'   => '</div>',
+		)
+	);
+}
+add_action( 'widgets_init', 'custom_widgets_init' );
