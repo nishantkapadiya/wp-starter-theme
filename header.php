@@ -56,6 +56,18 @@ if ( !defined( 'ABSPATH' ) || !function_exists( 'add_filter' ) ) {
                         echo'</nav>
                     </div>';
                 }
+                // echo '<div class="header-search">
+                //                 <i class="header-search-btn icon-search"></i>
+                //                 <div class="h-search-wrap">';
+                //                     $search_text = isset( $_GET['s'] ) ?  $_GET['s'] : '';
+                //                     echo '<form class="h-search-form-wrap" action="'.home_url( '/' ).'" method="get">
+                //                         <div class="h-search-field">
+                //                             <input type="search" name="s" placeholder="'.__('Search', 'wpstarter').'">
+                //                             <button class="icon-search" type="submit">Search</button>
+                //                         </div>
+                //                     </form>
+                //                 </div>
+                //             </div>';
                 echo'<!-- hamburger -->
                 <a href="javascript:;" class="hamburger">
                         <span></span>
