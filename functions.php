@@ -25,7 +25,7 @@ register_nav_menus( array(
 /**
  * Switch default core markup to output valid HTML5.
  */
-add_theme_support( 'html5' );
+add_theme_support( 'html5', [ 'script', 'style' ] );
 
 /**
  * Declare support for title theme feature.
