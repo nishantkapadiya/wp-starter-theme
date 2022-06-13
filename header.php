@@ -30,7 +30,7 @@ if ( !defined( 'ABSPATH' ) || !function_exists( 'add_filter' ) ) {
 	<div class="wrapper">
 		<div class="main-container">
 		<!-- device menu -->
-			<div class="mbnav d-md-none">
+			<div class="mbnav">
                 <div class="mbnav__backdrop"></div>
                 <div class="mbnav__state" data-clickable="true">
                     <!--  main responsive menu -->
