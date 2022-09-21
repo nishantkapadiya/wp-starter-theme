@@ -1,0 +1,84 @@
+{
+    "key": "group_62ab2f83cfcdd",
+    "title": "Page Components",
+    "fields": [
+        {
+            "key": "field_62ab2fa0d3ba8",
+            "label": "Page Component",
+            "name": "page_component",
+            "type": "flexible_content",
+            "instructions": "Flexible Component",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_62ab2fab3f11b": {
+                    "key": "layout_62ab2fab3f11b",
+                    "name": "two_column",
+                    "label": "Two Column",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62ab31d8f76bd",
+                            "label": "Text Box",
+                            "name": "text_box",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_62ab33291bc96": {
+                    "key": "layout_62ab33291bc96",
+                    "name": "three_column",
+                    "label": "Three Column",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Component",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1655387367
+}
