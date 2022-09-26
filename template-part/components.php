@@ -1,7 +1,7 @@
 <?php
-if( have_rows('page_component', $post_id)) {
+if( have_rows('page_component')) {
 	$loop = 1;
-    while ( have_rows('page_component', $post_id) ) {
+    while ( have_rows('page_component') ) {
         the_row();
         $layout = get_row_layout();
         switch ( $layout ) {
