@@ -69,25 +69,25 @@ function acf_link ( $link, $link_class = '' ) {
 
 		echo '<a class="'.$link_class.'" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.esc_html( $link_title ).'</a>';
 	endif;
-	// acf_link ($link, '')
+	// acf_link ($link);
 }
 /* </ACF Link> */
 
 /* <ACF Image> */
 function acf_img ( $img, $img_class = '' ) {
-if( $img ):
-	$img_url = $img['url'];
-	$img_alt = $img['alt'] ? $img['alt'] : '';
-	$img_class = $img_class ? $img_class : '';
+	if( $img ):
+		$img_url = $img['url'];
+		$img_alt = $img['alt'] ? $img['alt'] : '';
+		$img_class = $img_class ? $img_class : '';
 
-	echo '<img class="'.$img_class.'" src="'.esc_url( $img_url ).'" alt="'.esc_attr( $img['title'] ).'">';
+		echo '<img class="'.$img_class.'" src="'.esc_url( $img_url ).'" alt="'.esc_attr( $img['title'] ).'">';
 
-endif;
-// acf_img ($img, '')
+	endif;
+	// acf_img ($img);
 }
 /* </ACF Image> */
 
-/* youtube/vimeo ID get */
+/* Youtube ID get */
 function YouTube_ID($link){
 	$arr = parse_url($link);
 	if($arr['path'] === "/watch"){
@@ -96,6 +96,7 @@ function YouTube_ID($link){
 		return preg_replace('#^.*?/([^/]+)$#', '$1', $arr['path']);
 	}
 }
+/* Vimeo ID get */
 function Vimeo_ID($link){
 	$varr = parse_url($link);
     return str_replace('video','', preg_replace('#^.*?/([^/]+)$#', '$1', $varr['path']));

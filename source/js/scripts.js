@@ -21,7 +21,7 @@ window.onscroll = () => {
 
 /* Script on resize
 ------------------------------------------------------------------------------*/
-window.onresize = (event) => {
+window.onresize = () => {
 	/* Do jQuery stuff on resize */
 };
 
