@@ -11,12 +11,17 @@
 *.tar
 *.zip
 *.tgz
+!wp-includes/**/*.gz
+
+# Logs and databases #
+######################
+*.log
+*.sql
 
 # OS generated files #
 ######################
 .DS_Store*
 ehthumbs.db
-# Icon?
 Thumbs.db
 ._*
 
@@ -26,9 +31,11 @@ Thumbs.db
 
 # SASS #
 ##########
-build
-dist
-dest
 .sass-cache
-.vscode
 node_modules
+package-lock.json
+yarn-lock.json
+
+# CSS #
+##########
+style.min.css.map
