@@ -8,7 +8,7 @@ if( $templateSCSS ) :
 	$template_comp_file_path = get_template_directory().'/source/scss/templates/_'.str_replace("_","-",$template_name);
 	$template_comp_main_file_path = get_template_directory().'/source/scss/templates/_core.scss';
 	$component_main_file_path = get_template_directory().'/source/scss/components/_core.scss';
-		
+
 	if( !file_exists( $template_comp_file_path ) ) {
 		$template_scss_comp_file = fopen( $template_comp_file_path, "w") or die("Unable to open file!");
 		fwrite($template_scss_comp_file,$content);
@@ -18,7 +18,7 @@ if( $templateSCSS ) :
 		$current .= "@import \"".$template_name."\";\n";
 		// Write the contents back to the file
 		file_put_contents($template_comp_main_file_path, $current);
-		
+
 		fclose($template_scss_comp_file);
 	}
 endif;
@@ -30,7 +30,7 @@ if( have_rows('page_component')) :
         switch ( $layout ) :
             case $layout:
 				$php_comp_file_path = get_template_directory().'/template-part/components/'.str_replace("_","-",$layout).'.php';
-				$scss_comp_file_path = get_template_directory().'/source/scss/components/_'.str_replace("_","-",$layout).'.scss';				
+				$scss_comp_file_path = get_template_directory().'/source/scss/components/_'.str_replace("_","-",$layout).'.scss';
 				if( !file_exists( $php_comp_file_path ) ) {
 					$php_comp_file = fopen( $php_comp_file_path, "w") or die("Unable to open file!");
 					fclose($php_comp_file);
@@ -39,16 +39,15 @@ if( have_rows('page_component')) :
 				}
 				if( !file_exists( $scss_comp_file_path ) ) {
 					$scss_comp_file = fopen( $scss_comp_file_path, "w") or die("Unable to open file!");
-					
+
 					$current = file_get_contents($component_main_file_path);
 					// Append a new person to the file
 					$current .= "@import \"".str_replace("_","-",$layout)."\";\n";
 
 					file_put_contents($component_main_file_path, $current);
-	
+
 					fclose($scss_comp_file);
 				}
-				
             break;
 		endswitch;
     endwhile;

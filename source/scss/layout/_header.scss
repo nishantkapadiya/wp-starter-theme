@@ -19,15 +19,19 @@
 	/* nav */
 	.navigation {
 		word-break: keep-all;
+		@include respond-below(md){
+			display: none;
+		}
 
 		ul {
+			display: flex;
 			padding: 0;
 			margin: 0;
 			list-style: none;
 
 			li {
 				padding: 0;
-				margin: 0;
+				margin: 0 rem(15px);
 				list-style: none;
 
 				a {

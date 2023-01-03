@@ -43,7 +43,7 @@ add_filter( 'acf/settings/save_json', 'acf_settings_save_json' );
 add_filter( 'acf/settings/load_json', 'acf_settings_load_json' );
 
 // Gutenberg disable
-// add_filter('use_block_editor_for_post', '__return_false', 10);
+add_filter('use_block_editor_for_post', '__return_false', 10);
 
 /*-------------------------------------
     Move Yoast to the Bottom

@@ -13,18 +13,18 @@ if ( !defined( 'ABSPATH' ) ) {
 if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page(array(
-		'page_title' 	=> __( 'Theme Options', 'tnswp' ),
-		'menu_title'	=> __( 'Theme Options', 'tnswp' ),
+		'page_title' 	=> __( 'Theme Options', 'ctwp' ),
+		'menu_title'	=> __( 'Theme Options', 'ctwp' ),
 		'menu_slug' 	=> 'theme-options',
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> __( 'Theme Options', 'tnswp' ),
-		'menu_title'	=> __( 'Theme Options', 'tnswp' ),
+		'page_title' 	=> __( 'Theme Options', 'ctwp' ),
+		'menu_title'	=> __( 'Theme Options', 'ctwp' ),
 		'parent_slug'	=> 'theme-options',
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> __( '404', 'tnswp' ),
-		'menu_title'	=> __( '404', 'tnswp' ),
+		'page_title' 	=> __( '404', 'ctwp' ),
+		'menu_title'	=> __( '404', 'ctwp' ),
 		'parent_slug'	=> 'theme-options',
 	));
 }

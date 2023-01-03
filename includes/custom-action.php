@@ -72,9 +72,9 @@ function custom_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer Block', 'tnswp' ),
+			'name'          => esc_html__( 'Footer Block', 'ctwp' ),
 			'id'            => 'footer-block',
-			'description'   => esc_html__( 'Add widgets here to appear menu in your footer.', 'tnswp' ),
+			'description'   => esc_html__( 'Add widgets here to appear menu in your footer.', 'ctwp' ),
 			'before_widget' => '<div id="%1$s" class="mb-sm-30 mb-0">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<div class="sidebar-title">',

@@ -26,7 +26,7 @@ $body-color:    $black !default;
 $headingSize: (
   'h1': rem(50px),
   'h2': rem(40px),
-  'h3': rem(31px),
+  'h3': rem(32px),
   'h4': rem(25px),
   'h5': rem(20px),
   'h6': rem(18px),
@@ -84,7 +84,7 @@ $spaceamounts: (30);
 // Background and Text color classes(ex: .bg-white and .text-white)
 $bgColor-map: (
   'white' : $white,
-  'black' : $black
+  'dark' : $black
 );
 
 /* Note: If need Disable Decimal-value functionilty open function.scss file */
