@@ -1,7 +1,4 @@
 module.exports = {
-	config: {
-		port: 9050
-	},
 	paths: {
 		root: ".",
 		src: {
