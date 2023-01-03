@@ -11,7 +11,7 @@ if (!defined('ABSPATH') || !function_exists('add_filter')) {
 get_header();
 echo '<div class="main-content">
 	<section class="error-404">
-		<div class="container py-30">
+		<div class="container py-lg-90 py-50">	
 			<h1 class="page-title">';
 				echo '<span>'. _e( 'Oops! That page can&rsquo;t be found.') .'</span>';
 			echo '</h1>

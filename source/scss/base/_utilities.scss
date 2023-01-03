@@ -1,20 +1,27 @@
 /**
  * Main content containers
  */
+@use "sass:math";
+
 %container {
-    width: 100%;
+    --gutter: #{$gutters};
+    // max-width: calc(var(--container-width, none) + var(--gutter) * 2);
+    // width: min(100%, calc(var(--container-width, none) + var(--gutter) * 2));
+    width: min(100% - var(--gutter) * 2, var(--container-width, none));
     margin-left: auto;
     margin-right: auto;
-    padding-left: $gutters;
-    padding-right: $gutters;
+    // padding-left: var(--gutter);
+    // padding-right: var(--gutter);
+
     @include respond-below(md) {
-        padding-left: rem(20px);
-        padding-right: rem(20px);
+        --gutter: #{rem(20px)};
     }
 }
+
 .container {
+    --container-width: #{$container-width};
     @extend %container;
-    max-width: $container-width + $gutters * 2;
+
     &-fluid {
         @extend %container;
     }
@@ -31,7 +38,7 @@
         margin-right: 0;
         margin-left: 0;
 
-        > [class*="cell-"] {
+        >[class*="cell-"] {
             padding-right: 0;
             padding-left: 0;
         }
@@ -158,7 +165,8 @@
 }
 
 // bg and text color
-@each $name, $color in $bgColor-map {
+@each $name,
+$color in $bgColor-map {
     .bg-#{$name} {
         background-color: $color;
     }
@@ -171,96 +179,103 @@
 /* column structure */
 $grid-columns: 12;
 
-$sidesY: top, bottom;
-$sidesX: left, right;
+$sidesY: top,
+bottom;
+$sidesX: left,
+right;
 
 @for $i from 1 through $grid-columns {
     .cell-#{$i} {
-        width: percentage($i / $grid-columns);
+        width: percentage(math.div($i, $grid-columns));
     }
 }
 
-@if $spacing == true {
+@if $spacing==true {
     @each $space in $spaceamounts {
         @each $side in $sidesY {
+
             // margin
             .m#{str-slice($side, 0, 1)}-#{$space},
             .m-#{$space},
             .my-#{$space} {
-                margin-#{$side}: #{$space / 16}rem;
+                margin-#{$side}: #{math.div($space, 16)}rem;
             }
 
             // padding
             .p#{str-slice($side, 0, 1)}-#{$space},
             .p-#{$space},
             .py-#{$space} {
-                padding-#{$side}: #{$space / 16}rem;
+                padding-#{$side}: #{math.div($space, 16)}rem;
             }
         }
 
         @each $side in $sidesX {
+
             // margin
             .m#{str-slice($side, 0, 1)}-#{$space},
             .m-#{$space},
             .mx-#{$space} {
-                margin-#{$side}: #{$space / 16}rem;
+                margin-#{$side}: #{math.div($space, 16)}rem;
             }
 
             // padding
             .p#{str-slice($side, 0, 1)}-#{$space},
             .p-#{$space},
             .px-#{$space} {
-                padding-#{$side}: #{$space / 16}rem;
+                padding-#{$side}: #{math.div($space, 16)}rem;
             }
         }
     }
 }
 
-@each $bp-key, $bp in $breakpoints {
+@each $bp-key,
+$bp in $breakpoints {
     @include respond-above($bp-key) {
         @for $i from 1 through $grid-columns {
             .cell-#{$bp-key}-#{$i} {
-                width: percentage($i / $grid-columns);
+                width: percentage(math.div($i, $grid-columns));
             }
         }
 
-        @if $spacing == true {
+        @if $spacing==true {
             @each $space in $spaceamounts {
                 @each $side in $sidesY {
+
                     // margin
                     .m#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
                     .m-#{$bp-key}-#{$space},
                     .my-#{$bp-key}-#{$space} {
-                        margin-#{$side}: #{$space / 16}rem;
+                        margin-#{$side}: #{math.div($space, 16)}rem;
                     }
 
                     // padding
                     .p#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
                     .p-#{$bp-key}-#{$space},
                     .py-#{$bp-key}-#{$space} {
-                        padding-#{$side}: #{$space / 16}rem;
+                        padding-#{$side}: #{math.div($space, 16)}rem;
                     }
                 }
 
                 @each $side in $sidesX {
+
                     // margin
                     .m#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
                     .m-#{$bp-key}-#{$space},
                     .mx-#{$bp-key}-#{$space} {
-                        margin-#{$side}: #{$space / 16}rem;
+                        margin-#{$side}: #{math.div($space, 16)}rem;
                     }
 
                     // padding
                     .p#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
                     .p-#{$bp-key}-#{$space},
                     .px-#{$bp-key}-#{$space} {
-                        padding-#{$side}: #{$space / 16}rem;
+                        padding-#{$side}: #{math.div($space, 16)}rem;
                     }
                 }
             }
         }
 
-        @if $advance-utilities == true {
+        @if $advance-utilities==true {
             .d {
                 &-#{$bp-key} {
                     &-none {

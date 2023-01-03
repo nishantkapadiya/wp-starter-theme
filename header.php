@@ -14,6 +14,10 @@ if ( !defined( 'ABSPATH' ) || !function_exists( 'add_filter' ) ) {
 <head>
 	<meta charset="<?php bloginfo( 'charset' ) ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" >
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <!-- <meta name="theme-color" content="#7b0a2e"/> -->
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ) ?>" />
 
@@ -26,7 +30,7 @@ if ( !defined( 'ABSPATH' ) || !function_exists( 'add_filter' ) ) {
 	<div class="wrapper">
 		<div class="main-container">
 		<!-- device menu -->
-			<div class="mbnav">
+			<div class="mbnav d-md-none">
                 <div class="mbnav__backdrop"></div>
                 <div class="mbnav__state" data-clickable="true">
                     <!--  main responsive menu -->

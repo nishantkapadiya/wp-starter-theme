@@ -1,4 +1,5 @@
 <?php
+
 $templateSCSS = false;
 if( $templateSCSS ) :
 	global $template;
@@ -23,7 +24,6 @@ if( $templateSCSS ) :
 endif;
 
 if( have_rows('page_component')) :
-	$loop = 1;
     while ( have_rows('page_component') ) :
         the_row();
         $layout = get_row_layout();

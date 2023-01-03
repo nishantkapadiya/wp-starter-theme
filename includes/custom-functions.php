@@ -13,18 +13,18 @@ if ( !defined( 'ABSPATH' ) ) {
 if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page(array(
-		'page_title' 	=> __( 'Theme Options', 'wpstarter' ),
-		'menu_title'	=> __( 'Theme Options', 'wpstarter' ),
+		'page_title' 	=> __( 'Theme Options', 'tnswp' ),
+		'menu_title'	=> __( 'Theme Options', 'tnswp' ),
 		'menu_slug' 	=> 'theme-options',
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> __( 'Theme Options', 'wpstarter' ),
-		'menu_title'	=> __( 'Theme Options', 'wpstarter' ),
+		'page_title' 	=> __( 'Theme Options', 'tnswp' ),
+		'menu_title'	=> __( 'Theme Options', 'tnswp' ),
 		'parent_slug'	=> 'theme-options',
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> __( '404', 'wpstarter' ),
-		'menu_title'	=> __( '404', 'wpstarter' ),
+		'page_title' 	=> __( '404', 'tnswp' ),
+		'menu_title'	=> __( '404', 'tnswp' ),
 		'parent_slug'	=> 'theme-options',
 	));
 }
@@ -59,3 +59,44 @@ function svg_icon( $wp_icon, $classes="", $width="", $height="" ){
 	return ob_get_clean();
 }
 /* SVG icon function end */
+/* <ACF Link> */
+function acf_link ( $link, $link_class = '' ) {
+	if( $link ):
+		$link_url = $link['url'];
+		$link_title = $link['title'];
+		$link_target = $link['target'] ? $link['target'] : '_self';
+		$link_class = $link_class ? $link_class : 'btn';
+
+		echo '<a class="'.$link_class.'" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.esc_html( $link_title ).'</a>';
+	endif;
+	// acf_link ($link, '')
+}
+/* </ACF Link> */
+
+/* <ACF Image> */
+function acf_img ( $img, $img_class = '' ) {
+if( $img ):
+	$img_url = $img['url'];
+	$img_alt = $img['alt'] ? $img['alt'] : '';
+	$img_class = $img_class ? $img_class : '';
+
+	echo '<img class="'.$img_class.'" src="'.esc_url( $img_url ).'" alt="'.esc_attr( $img['title'] ).'">';
+
+endif;
+// acf_img ($img, '')
+}
+/* </ACF Image> */
+
+/* youtube/vimeo ID get */
+function YouTube_ID($link){
+	$arr = parse_url($link);
+	if($arr['path'] === "/watch"){
+		return str_replace('v=','', preg_replace('#^.*?/([^/]+)$#', '$1', $arr['query']));
+	}else{
+		return preg_replace('#^.*?/([^/]+)$#', '$1', $arr['path']);
+	}
+}
+function Vimeo_ID($link){
+	$varr = parse_url($link);
+    return str_replace('video','', preg_replace('#^.*?/([^/]+)$#', '$1', $varr['path']));
+}

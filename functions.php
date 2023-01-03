@@ -12,7 +12,7 @@ if ( !defined( 'ABSPATH' ) ) {
 /**
  * Define theme's prefix.
  */
-define( 'THEME_PREFIX', 'abc' );
+define( 'THEME_PREFIX', 'tns' );
 
 /**
  * - Register Navigation Name
