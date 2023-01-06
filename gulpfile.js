@@ -33,14 +33,15 @@ function devScripts() {
     `${options.paths.src.js}/libs/**/*.js`,
     `${options.paths.src.js}/**/*.js`,
   ])
-  .pipe(concat({ path: 'scripts.min.js' }))
-  .pipe(uglify())
+  .pipe(concat({ path: 'scripts.js' }))
+  // .pipe(uglify())
   .pipe(dest(options.paths.dest.js));
 }
 
 function watchFiles() {
   watch(`${options.paths.src.scss}/**/*.scss`, series(devStyles));
   watch(`${options.paths.src.js}/**/*.js`, series(devScripts));
+  watch(`${options.paths.src.js}/**/*.js`, series(prodScripts));
   console.log("Watching for Changes..\n");
 }
 
@@ -83,7 +84,7 @@ function buildFinish(done) {
 
 exports.default = series(
   devClean, // Clean dest Folder
-  parallel(devStyles, devScripts), //Run All tasks in parallel
+  parallel(devStyles, devScripts, prodScripts), //Run All tasks in parallel
   watchFiles // Watch for Live Changes
 );
 
