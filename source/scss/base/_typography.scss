@@ -43,7 +43,7 @@ $size in $headingSize {
         font-size: $size;
         font-weight: $hgroup-font-weight;
         line-height: $hgroup-line-height;
-        word-break: break-word;
+        word-break: keep-all;
         a {
             display: block;
             color: inherit;
