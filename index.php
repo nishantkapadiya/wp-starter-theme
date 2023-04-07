@@ -8,16 +8,14 @@ if (!defined('ABSPATH') || !function_exists('add_filter')) {
 	exit;
 }
 get_header();
-echo '<div class="main-content">
-	<section class="body-content py-30">
-	<div class="container">';
-		if ( have_posts() ) {
-			while ( have_posts() ) {
-				the_post();
+echo '<div class="main-content">';
+	$content = apply_filters('the_content', $post->post_content);
+	if( $content ):
+		echo '<section class="body-content py-30">
+			<div class="container">';
 				the_content();
-			}
-		}
-	echo '</div>
-	</section>
-</div>';
+			echo '</div>
+		</section>';
+	endif;
+echo '</div>';
 get_footer();

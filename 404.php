@@ -18,22 +18,22 @@ echo '<div class="main-content">
 			echo '<h1>'.$title.'</h1>';
 		}else{
 			echo'<h1 class="page-title">';
-				echo '<span>'. _e( 'Oops! That page can&rsquo;t be found.') .'</span>';
+				echo '<span>'. __( 'Oops! That page can&rsquo;t be found.','wpstarter') .'</span>';
 			echo '</h1>';
 		}
 		if( $description ){
 			echo '<div class="description">'.$description.'</div>';
 		}else{
-			echo '<div class="description">
-				<p>The Page You Requested Cannot Be Found. The Page You Are Looking For Might Have Been Removed, Had Its Name Changed, Or Is Temporarily Unavailable.</p>
-				</br>
-				<h5>Please try the following:</h5>
-				<ul>
-					<li>If you typed the page address in the Address bar, make sure that it is spelled correctly.</li>';
-					echo '<li>Open the <a href="'.get_home_url().'">Home Page</a> and look for links to the information you want.</li>';
-					echo '<li>Use the navigation bar on the left or top to find the link you are looking for.</li>
+			echo '<div class="description">';
+				echo '<p>'.__('The Page You Requested Cannot Be Found. The Page You Are Looking For Might Have Been Removed, Had Its Name Changed, Or Is Temporarily Unavailable.','wpstarter').'</p>';
+				echo'</br>';
+				echo '<h5>'.__('Please try the following:','wpstarter').'</h5>';
+				echo '<ul>';
+					echo '<li>'.__('If you typed the page address in the Address bar, make sure that it is spelled correctly.','wpstarter').'</li>';
+					echo '<li>'.__('Open the ','wpstarter').'<a href="'.get_home_url().'">'.__('Home Page</a> and look for links to the information you want.','wpstarter').'</li>';
+					echo '<li>'.__('Use the navigation bar on the left or top to find the link you are looking for.','wpstarter').'</li>
 				</ul>';
-				echo '<a href="'.get_home_url().'" class="btn mt-15">Back To Home</a>';
+				echo '<a href="'.get_home_url().'" class="btn mt-15">'.__('Back To Home','wpstarter').'</a>';
 			echo '</div>';
 		}
 	echo '</div>

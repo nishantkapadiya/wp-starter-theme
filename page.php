@@ -14,17 +14,15 @@ echo '<section class="inner-hero">';
 		echo '<div class="container inner-hero-content text-center py-30">
 			<h1 class="h1">'.get_the_title().'</h1>
 		</div>
-</section>
-<div class="main-content">
-	<section class="body-content py-30">
-		<div class="container">';
-			if ( have_posts() ) {
-				while ( have_posts() ) {
-					the_post();
-					the_content();
-				}
-			}
-	echo '</div>
-	</section>
-</div>';
+</section>';
+echo '<div class="main-content">';
+	$content = apply_filters('the_content', $post->post_content);
+	if( $content ):
+		echo '<section class="body-content py-30">
+			<div class="container">';
+				the_content();
+			echo '</div>
+		</section>';
+	endif;
+echo '</div>';
 get_footer();

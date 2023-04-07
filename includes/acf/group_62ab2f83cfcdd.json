@@ -6,6 +6,7 @@
             "key": "field_62ab2fa0d3ba8",
             "label": "Page Component",
             "name": "page_component",
+            "aria-label": "",
             "type": "flexible_content",
             "instructions": "Flexible Component",
             "required": 0,
@@ -26,6 +27,7 @@
                             "key": "field_62ab31d8f76bd",
                             "label": "Text Box",
                             "name": "text_box",
+                            "aria-label": "",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -44,20 +46,11 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                "layout_62ab33291bc96": {
-                    "key": "layout_62ab33291bc96",
-                    "name": "three_column",
-                    "label": "Three Column",
-                    "display": "block",
-                    "sub_fields": [],
-                    "min": "",
-                    "max": ""
                 }
             },
-            "button_label": "Add Component",
             "min": "",
-            "max": ""
+            "max": "",
+            "button_label": "Add Component"
         }
     ],
     "location": [
@@ -80,5 +73,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655387367
+    "modified": 1680870535
 }

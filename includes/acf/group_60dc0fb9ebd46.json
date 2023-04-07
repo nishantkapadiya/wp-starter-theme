@@ -6,6 +6,7 @@
             "key": "field_60dc101805451",
             "label": "Header",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -22,6 +23,7 @@
             "key": "field_60dc0fc1ebba0",
             "label": "Brand Logo",
             "name": "brand_logo",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 1,
@@ -46,6 +48,7 @@
             "key": "field_60dc102a05452",
             "label": "Footer",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -76,5 +79,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625044261
+    "show_in_rest": 0,
+    "modified": 1680874648
 }

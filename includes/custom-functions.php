@@ -13,18 +13,23 @@ if ( !defined( 'ABSPATH' ) ) {
 if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page(array(
-		'page_title' 	=> __( 'Theme Options', 'ctwp' ),
-		'menu_title'	=> __( 'Theme Options', 'ctwp' ),
+		'page_title' 	=> __( 'Theme Options', 'wpstarter' ),
+		'menu_title'	=> __( 'Theme Options', 'wpstarter' ),
 		'menu_slug' 	=> 'theme-options',
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> __( 'Theme Options', 'ctwp' ),
-		'menu_title'	=> __( 'Theme Options', 'ctwp' ),
+		'page_title' 	=> __( 'Theme Options', 'wpstarter' ),
+		'menu_title'	=> __( 'Theme Options', 'wpstarter' ),
 		'parent_slug'	=> 'theme-options',
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> __( '404', 'ctwp' ),
-		'menu_title'	=> __( '404', 'ctwp' ),
+		'page_title' 	=> __( 'Global Options', 'wpstarter' ),
+		'menu_title'	=> __( 'Global Options', 'wpstarter' ),
+		'parent_slug'	=> 'theme-options',
+	));
+	acf_add_options_sub_page(array(
+		'page_title' 	=> __( '404', 'wpstarter' ),
+		'menu_title'	=> __( '404', 'wpstarter' ),
 		'parent_slug'	=> 'theme-options',
 	));
 }
@@ -66,10 +71,9 @@ function acf_link ( $link, $link_class = '' ) {
 		$link_title = $link['title'];
 		$link_target = $link['target'] ? $link['target'] : '_self';
 		$link_class = $link_class ? $link_class : 'btn';
-
-		echo '<a class="'.$link_class.'" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.esc_html( $link_title ).'</a>';
+		return '<a class="'.$link_class.'" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.esc_html( $link_title ).'</a>';
 	endif;
-	// acf_link ($link);
+	// echo acf_link($link);
 }
 /* </ACF Link> */
 
@@ -79,11 +83,9 @@ function acf_img ( $img, $img_class = '' ) {
 		$img_url = $img['url'];
 		$img_alt = $img['alt'] ? $img['alt'] : '';
 		$img_class = $img_class ? $img_class : '';
-
-		echo '<img class="'.$img_class.'" src="'.esc_url( $img_url ).'" alt="'.esc_attr( $img['title'] ).'">';
-
+		return '<img class="'.$img_class.'" src="'.esc_url( $img_url ).'" alt="'.esc_attr( $img['title'] ).'">';
 	endif;
-	// acf_img ($img);
+	// echo acf_img($img);
 }
 /* </ACF Image> */
 
@@ -100,4 +102,11 @@ function YouTube_ID($link){
 function Vimeo_ID($link){
 	$varr = parse_url($link);
     return str_replace('video','', preg_replace('#^.*?/([^/]+)$#', '$1', $varr['path']));
+}
+
+// Print code
+function printr($code){
+	echo '<pre>';
+	print_r($code);
+	echo '</pre>';
 }
