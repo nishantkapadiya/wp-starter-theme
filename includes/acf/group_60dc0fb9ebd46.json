@@ -17,7 +17,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_60dc0fc1ebba0",
@@ -59,7 +60,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         }
     ],
     "location": [
@@ -67,7 +69,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-theme-options"
+                "value": "theme-options"
             }
         ]
     ],
@@ -76,9 +78,11 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680874648
+    "modified": 1734521265
 }

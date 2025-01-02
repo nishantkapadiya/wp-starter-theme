@@ -48,7 +48,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-global-options"
+                "value": "global-options"
             }
         ]
     ],
@@ -57,9 +57,11 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680874892
+    "modified": 1734521241
 }
