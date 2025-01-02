@@ -56,12 +56,9 @@ function acf_link ( $link, $link_class = '' ) {
 function acf_img ( $img, $img_class = '' ) {
 	if( $img ):
 		$img_url = $img['url'];
-		$img_alt = $img['alt'] ? $img['alt'] : $img['title'];
+		$img_alt = $img['alt'] ? $img['alt'] : '';
 		$img_class = $img_class ? $img_class : '';
-		$img_width =  $img['width'] != 1 ? ' width="'. $img['width'].'"' : '';
-		$img_height =  $img['height'] != 1 ?  ' height="'.$img['height'].'"' : '';
-		// return '<img class="'.$img_class.'" src="'.esc_url( $img_url ).'" alt="'.esc_attr( $img['title'] ).'">';
-		return '<img class="'.$img_class.'" src="'.esc_url( $img_url ).'" alt="'.esc_attr( $img_alt ).'" '. $img_width .' '. $img_height .'>';
+		return '<img class="'.$img_class.'" src="'.esc_url( $img_url ).'" alt="'.esc_attr( $img['title'] ).'">';
 	endif;
 	// echo acf_img($img);
 }
